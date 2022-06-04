@@ -44,6 +44,6 @@ function play(){
         console.log(`Game number:${i}. Result: ${roundPlay(playerSelection,computerSelection)}`)
     }
 }
-playerSelection = window.prompt("What's your choice?")
-computerSelection = computerPlay();
+let playerSelection = window.prompt("What's your choice?")
+let computerSelection = computerPlay();
 play()
