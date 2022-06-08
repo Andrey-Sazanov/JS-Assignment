@@ -39,11 +39,35 @@ function roundPlay(playerSelection,computerSelection){
     return result;
 }
 
-function play(){
-    for(let i =1;i < 6;i++){
-        console.log(`Game number:${i}. Result: ${roundPlay(playerSelection,computerSelection)}`)
-    }
-}
-let playerSelection = window.prompt("What's your choice?")
+let playerSelection = ''
 let computerSelection = computerPlay();
-play()
+let rock = document.getElementById('rock')
+let paper = document.getElementById('paper')
+let scissors = document.getElementById('scissors')
+let computerChoice = document.getElementById('computer-choice')
+let result = document.getElementById('result')
+let winCounter = 0;
+rock.addEventListener('click',()=>{
+  playerSelection = 'Rock'
+  console.log(roundPlay(playerSelection,computerSelection))  
+  show()
+  showResult()
+})
+paper.addEventListener('click',()=>{
+    playerSelection = 'Rock'
+    console.log(roundPlay(playerSelection,computerSelection))
+    show()
+    showResult()  
+})
+scissors.addEventListener('click',()=>{
+    playerSelection = 'Rock'
+    console.log(roundPlay(playerSelection,computerSelection))
+    show()
+    showResult()  
+})
+function show(){
+    computerChoice.innerHTML = ` computer's choice is ${computerPlay()}`
+}
+function showResult(){
+    result.innerHTML = `${roundPlay(computerSelection,playerSelection)}`
+}
